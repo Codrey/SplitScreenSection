@@ -1,0 +1,214 @@
+body{
+    margin:0;
+    padding:0;
+    font-size:100%;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #wrapper{
+    position: relative;
+    width:100%;
+    min-height:55vw;
+    overflow: hidden;
+  }
+  
+  .layer{
+    position: absolute;
+    width:100vw;
+    min-height: 55vw;
+    overflow: hidden;
+  }
+  
+  .layer .content-wrap{
+    position: absolute;
+    width:100vw;
+    min-height: 55vw;
+  }
+  
+  .layer .content-body{
+    width:25%;
+    position:absolute;
+    top:50%;
+    text-align: center;
+    transform:translateY(-50%);
+    color: whitesmoke;
+  }
+  
+  .layer img{
+    position: absolute;
+    width:35%;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+  }
+  
+  .layer h1{
+    font-size:2em;
+  }
+  
+  .heading{
+        color: pink;
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        animation-name: heading;
+        animation-duration: 1.2s;
+        animation-delay: 0;
+        animation-fill-mode: both;
+    }
+
+  .bottom{
+    background:black;
+    z-index:1;
+      opacity: 0.5;
+}
+  
+  .bottom .content-body{
+    right:5%;
+  }
+  
+  .bottom h1{
+    color:turquoise;
+  }
+
+  .text-top{
+    position: relative;
+    animation-name: text-top;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+  }
+
+  .text-bottom{
+    position: relative;
+    animation-name: text-bottom;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+  }
+  
+  .top{
+    background: white;
+    color:#222;
+    z-index:2;
+    width:50vw;
+  }
+  
+  .top .content-body{
+    left: 5%;
+    color:#222;
+  }
+  
+  .handle{
+    position: absolute;
+    height: 100%;
+    display: block;
+    background-color: turquoise;
+    width:5px;
+    top:0;
+    left: 50%;
+    z-index:3;
+  }
+  
+  .skewed .handle{
+    top:50%;
+    transform:rotate(30deg) translateY(-50%);
+    height: 200%;
+    transform-origin:top;
+    width: 6rem;
+    opacity: 0.6;
+    border: 33px;
+    border-style: dashed;
+    border-width: .5ch;
+    border-color: aqua;
+  }
+  
+  .skewed .top{
+    transform: skew(-30deg);
+    margin-left:-1000px;
+    width: calc(50vw + 1000px);
+  }
+  
+  .skewed .top .content-wrap{
+    transform: skew(30deg);
+    margin-left:1000px;
+  }
+  
+  @media(max-width:768px){
+    body{
+      font-size:75%;
+    }
+  }
+
+  @media(max-width:375px){
+    body{
+      font-size:35%;
+    }
+    .heading{
+        font-size: 2.5ch !important;
+        top: 12px !important;
+        text-align: center;
+    }
+    .skewed .handle{
+        /* Safari 4.0 - 8.0 */
+        width: 27%;
+        transform: translateY(-5ch);
+        -webkit-animation-name: example; 
+        -webkit-animation-duration: 4s; 
+        -webkit-animation-iteration-count: infinite; 
+        animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+  }
+
+/* Animation */
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes text-bottom {
+    from {right: -15em; }
+    to {right: 0px;}
+}
+
+@keyframes text-bottom {
+    from {right: -15em; }
+    to {right: 0px;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes text-top {
+    from {left: -15em;}
+    to {left: 0px;}
+}
+
+@keyframes text-top {
+    from {left: -15em; }
+    to {left: 0px;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes heading {
+    from {top: -15em;}
+    to {top: 1.5rem;}
+}
+
+@keyframes heading {
+    from {top: -55em; }
+    to {top: 1.5rem;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   { left:-15%; top:0px;}
+    25%  { left:90%; top:0px;}
+    100% {left:-15%; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   { left:-15%; top:0px;}
+    25%  { left:90%; top:0px;}
+    100% {left:-15%; top:0px;}
+}
